@@ -1,0 +1,118 @@
+body {
+    height: 100vh;
+    max-width: 100vw;
+    margin: 0;
+    position: relative;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.logo-container {
+    width: 100vw;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+a {
+    display: flex;
+    margin: 4px;
+}
+
+#logo-1 {
+    animation: splash 1.5s normal forwards ease-in-out;
+}
+
+#logo-2 {
+    animation: splash 3s normal forwards ease-in-out;
+}
+
+#logo-3 {
+    animation: splash 4.5s normal forwards ease-in-out;
+}
+
+#logo-4 {
+    animation: splash 6s normal forwards ease-in-out;
+}
+
+@keyframes splash {
+    from {
+        opacity: 0;
+        transform: scale(0, 0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1, 1.1);
+    }
+    to {
+        transform: scale(1, 1);
+    }
+}
+
+.logo-column{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logo{
+    display: flex;
+    height: 200px;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 82%;
+    transition: background-size .2s ease-in-out;
+}
+
+.logo:hover{
+    transition: background-size .2s ease-in-out;
+    background-size: 100%;
+}
+
+@media only screen and (max-width: 460px) {
+
+    .logo-container {
+        padding: 10px;
+    }
+
+    a {
+        margin: 8px;
+    }
+
+    .logo-column{
+        justify-content: center;
+    }
+
+    .logo{
+        height: 150px;
+        width: 150px;
+        background-size: 100%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    .logo {
+        height: 135px;
+        width: 135px;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+
+    .logo-container {
+        top: 0;
+        transform: none;
+    }
+}
